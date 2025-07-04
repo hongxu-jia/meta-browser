@@ -21,10 +21,7 @@ LICENSE = "MPL-2.0"
 CVE_PRODUCT = "mozilla:firefox"
 
 
-FF_BASEDIR = '${@ "${WORKDIR}" if d.getVar("UNPACKDIR") == None \
-                 else d.getVar("UNPACKDIR")}'
-
-S = "${FF_BASEDIR}/firefox-${MOZ_APP_BASE_VERSION}"
+S = "${UNPACKDIR}/firefox-${MOZ_APP_BASE_VERSION}"
 
 MOZ_APP_BASE_VERSION = "${@'${PV}'.replace('esr', '')}"
 

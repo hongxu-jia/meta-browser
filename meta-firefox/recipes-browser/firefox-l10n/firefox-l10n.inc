@@ -14,10 +14,8 @@ LANGUAGE = "${@get_language_name('${PN}')}"
 DL_DIR:append = "/${PN}-${PV}"
 
 SRC_URI = "https://archive.mozilla.org/pub/firefox/releases/${PV}/linux-x86_64/xpi/${LANGUAGE}.xpi"
-FF_INTL_BASEDIR = '${@ "${WORKDIR}" if d.getVar("UNPACKDIR") == None \
-                  else d.getVar("UNPACKDIR")}'
 
-S = "${FF_INTL_BASEDIR}"
+S = "${UNPACKDIR}"
 
 inherit allarch
 
